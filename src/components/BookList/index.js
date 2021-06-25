@@ -1,3 +1,1 @@
-import BookList from "./BookList";
-
-export default BookList;
+export { default } from "./BookList";

@@ -1,3 +1,1 @@
-import IntroductionCard from "./IntoductionCard";
-
-export default IntroductionCard;
+export { default } from "./IntroductionCard";

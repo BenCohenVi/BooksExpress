@@ -2,7 +2,7 @@ import React from "react";
 
 import { AppBar, Typography } from "@material-ui/core";
 
-import CartButton from "./CartButton";
+import CartButton from "../CartButton";
 
 import topBarStyles from "./TopBar.styles";
 

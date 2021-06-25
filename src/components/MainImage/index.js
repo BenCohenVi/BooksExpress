@@ -1,3 +1,1 @@
-import MainImage from "./MainImage";
-
-export default MainImage;
+export { default } from "./MainImage";

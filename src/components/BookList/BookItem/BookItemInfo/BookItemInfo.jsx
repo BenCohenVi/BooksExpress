@@ -9,16 +9,9 @@ const BookItemInfo = ({ book }) => {
 
   return (
     <section className={classes.bookInformation}>
-      <Typography variant="p" className={classes.title}>
-        {book.name}
-      </Typography>
-      <Typography variant="p" className={classes.author}>
-        {book.author}
-      </Typography>
-      <Typography
-        variant="p"
-        className={classes.price}
-      >{`$${book.price}`}</Typography>
+      <Typography className={classes.title}>{book.name}</Typography>
+      <Typography className={classes.author}>{book.author}</Typography>
+      <Typography className={classes.price}>${book.price}</Typography>
     </section>
   );
 };

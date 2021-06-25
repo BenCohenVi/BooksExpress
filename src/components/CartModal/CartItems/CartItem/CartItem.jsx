@@ -34,11 +34,9 @@ const CartItem = ({ item }) => {
         </Typography>
         <section className={classes.amountSection}>
           <Typography
-            variant="p"
             className={classes.price}
           >{`$${item.price}`}</Typography>
           <Typography
-            variant="p"
             className={classes.amount}
           >{`x ${item.amount}`}</Typography>
         </section>

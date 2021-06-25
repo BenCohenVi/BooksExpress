@@ -1,3 +1,1 @@
-import TotalAmount from "./TotalAmount";
-
-export default TotalAmount;
+export { default } from "./TotalAmount";

@@ -1,3 +1,1 @@
-import CartModal from "./CartModal";
-
-export default CartModal;
+export { default } from "./CartModal";

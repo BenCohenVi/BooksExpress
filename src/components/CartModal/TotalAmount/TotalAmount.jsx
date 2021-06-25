@@ -12,14 +12,14 @@ const TotalAmount = () => {
   const cartCtx = useContext(CartContext);
 
   const totalCartValue = cartCtx.items.reduce(
-    (currentPrice, item) => (currentPrice += item.price * item.amount),
+    (currentPrice, item) => currentPrice + item.price * item.amount,
     0
   );
 
   return (
     <div className={classes.root}>
       <Typography variant="h6">Total Amount</Typography>
-      <Typography variant="h6">{`$${totalCartValue.toFixed(2)}`}</Typography>
+      <Typography variant="h6">${totalCartValue.toFixed(2)}</Typography>
     </div>
   );
 };

@@ -5,54 +5,55 @@ export const initialState = {
 };
 
 export const cartReducer = (state, action) => {
-  if (action.type === ADD_ITEM) {
-    const newItem = { ...action.item };
+  switch (action.type) {
+    case ADD_ITEM: {
+      const newItem = action.item;
 
-    const existingItemIndex = state.items.findIndex(
-      (item) => item.id === newItem.id
-    );
+      const existingItemIndex = state.items.findIndex(
+        (item) => item.id === newItem.id
+      );
 
-    if (existingItemIndex !== -1) {
+      if (existingItemIndex !== -1) {
+        const updatedItems = [...state.items];
+        updatedItems[existingItemIndex].amount += newItem.amount;
+        return {
+          ...state,
+          items: updatedItems,
+        };
+      }
+
+      return {
+        ...state,
+        items: [...state.items, action.item],
+      };
+    }
+    case REMOVE_ITEM: {
+      const itemIdToRemove = action.itemId;
+
+      const existingItemIndex = state.items.findIndex(
+        (item) => item.id === itemIdToRemove
+      );
+      const existingItem = state.items[existingItemIndex];
+
+      if (existingItem.amount === 1) {
+        return {
+          ...state,
+          items: state.items.filter((item) => item.id !== itemIdToRemove),
+        };
+      }
+
       const updatedItems = [...state.items];
-      updatedItems[existingItemIndex].amount += newItem.amount;
+      updatedItems[existingItemIndex] = {
+        ...existingItem,
+        amount: --existingItem.amount,
+      };
+
       return {
         ...state,
         items: updatedItems,
       };
     }
-
-    return {
-      ...state,
-      items: [...state.items, action.item],
-    };
+    default:
+      return state;
   }
-
-  if (action.type === REMOVE_ITEM) {
-    const itemIdToRemove = action.itemId;
-
-    const existingItemIndex = state.items.findIndex(
-      (item) => item.id === itemIdToRemove
-    );
-    const existingItem = state.items[existingItemIndex];
-
-    if (existingItem.amount === 1) {
-      return {
-        ...state,
-        items: state.items.filter((item) => item.id !== itemIdToRemove),
-      };
-    }
-
-    const updatedItems = [...state.items];
-    updatedItems[existingItemIndex] = {
-      ...existingItem,
-      amount: --existingItem.amount,
-    };
-
-    return {
-      ...state,
-      items: updatedItems,
-    };
-  }
-
-  return { ...state };
 };

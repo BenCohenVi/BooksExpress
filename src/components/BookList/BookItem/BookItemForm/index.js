@@ -1,3 +1,1 @@
-import BookItemForm from "./BookItemForm";
-
-export default BookItemForm;
+export { default } from "./BookItemForm";

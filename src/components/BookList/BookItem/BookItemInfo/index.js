@@ -1,3 +1,1 @@
-import BookItemInfo from "./BookItemInfo";
-
-export default BookItemInfo;
+export { default } from "./BookItemInfo";

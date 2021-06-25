@@ -16,7 +16,7 @@ const cartButtonStyles = makeStyles((theme) => ({
     marginRight: "4px",
   },
   badge: {
-    margin: "1px",
+    padding: "1px",
     backgroundColor: "#8a2b06",
   },
 }));
