@@ -12,6 +12,8 @@ const TotalAmount = () => {
   const cartCtx = useContext(CartContext);
 
   const totalCartValue = cartCtx.items.reduce(
+    // CR: dont mutate current price 
+    // `=> currentPrice + (item.price * item.amount)`
     (currentPrice, item) => (currentPrice += item.price * item.amount),
     0
   );

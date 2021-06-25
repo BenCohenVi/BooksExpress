@@ -9,6 +9,7 @@ import bookListStyles from "./BookList.styles";
 const BookList = ({ books }) => {
   const classes = bookListStyles();
 
+  // CR: I would inline this variable, just a preference
   const bookItems = books.map((book) => <BookItem key={book.id} book={book} />);
 
   return (

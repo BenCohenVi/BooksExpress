@@ -18,6 +18,7 @@ const BookItemInfo = ({ book }) => {
       <Typography
         variant="p"
         className={classes.price}
+      /* CR: `>${book.price}</Typography>` */
       >{`$${book.price}`}</Typography>
     </section>
   );

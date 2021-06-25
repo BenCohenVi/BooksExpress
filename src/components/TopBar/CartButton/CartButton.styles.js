@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/styles";
 const cartButtonStyles = makeStyles((theme) => ({
   root: {
     borderRadius: "25px",
+    // CR: dimensions with rem should be avoided, percentage and pixels are best for such things
     padding: "0.5rem 2rem",
     display: "flex",
     alignContent: "center",
@@ -16,6 +17,7 @@ const cartButtonStyles = makeStyles((theme) => ({
     marginRight: "4px",
   },
   badge: {
+    // CR: fills like padding will be semantically better
     margin: "1px",
     backgroundColor: "#8a2b06",
   },
